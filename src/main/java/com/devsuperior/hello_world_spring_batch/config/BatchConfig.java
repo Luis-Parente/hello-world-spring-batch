@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class BatchConfig {
 
 	@Bean
-	public Job job(JobRepository jobRepository, Step printHelloStep) {
-		return new JobBuilder("job", jobRepository).start(printHelloStep).incrementer(new RunIdIncrementer()).build();
+	public Job printHelloJob(JobRepository jobRepository, Step printHelloStep) {
+		return new JobBuilder("printHelloJob", jobRepository).start(printHelloStep).incrementer(new RunIdIncrementer()).build();
 	}
 
 }
